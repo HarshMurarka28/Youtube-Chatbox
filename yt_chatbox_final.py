@@ -35,7 +35,7 @@ if st.session_state.get("video_loaded"):
     """,
     input_variables=['context', 'question']
     )
-    load_dotenv()
+    api_key = st.secrets["HUGGINGFACEHUB_API_TOKEN"]
     llm = HuggingFaceEndpoint(
         model="Qwen/Qwen3-8B",
         task = "text_generation"
