@@ -16,7 +16,7 @@ if st.button("Submit"):
     
 if st.session_state.get("video_loaded"):
     try:
-        transcript_list = YouTubeTranscriptApi().fetch(video_id=video_id, languages=['en'])
+        transcript_list = YouTubeTranscriptApi().fetch(video_id=video_id)
         transcript = " ".join(chunck.text for chunck in transcript_list)
     except TranscriptsDisabled:
         print("No caption available for the video")
